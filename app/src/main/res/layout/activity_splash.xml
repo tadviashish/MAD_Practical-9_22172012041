@@ -8,12 +8,14 @@
     tools:context=".SplashActivity">
 
     <ImageView
+        android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
         android:layout_gravity="center_vertical"
-        android:src="@drawable/uvpce_logo"
-        android:layout_marginHorizontal="20dp"/>
-<!--    it should be senter of the scree and hight of it should be 200dp width should
- matchparent mHorizontal 20 dp-->
+        android:layout_marginHorizontal="20dp"
+        android:src="@drawable/logo_animation_list" />
+
+    <!--    it should be senter of the scree and hight of it should be 200dp width should
+     matchparent mHorizontal 20 dp-->
 
 </LinearLayout>

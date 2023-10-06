@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var img:ImageView = findViewById(R.id.alarmimg)
+        var img:ImageView = findViewById(R.id.alarimg)
         img.setBackgroundResource(R.drawable.alarm_animation_list)
         alarmanimation = img.background as AnimationDrawable
 }
