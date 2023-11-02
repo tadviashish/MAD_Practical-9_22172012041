@@ -12,25 +12,26 @@ import android.widget.ImageView
 class SplashActivity : AppCompatActivity() ,AnimationListener{
     lateinit var logoanimation: AnimationDrawable
     lateinit var tweenanimation:Animation
-    var logoimg: ImageView = findViewById(R.id.logo)
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-
+        var logoimg: ImageView = findViewById(R.id.logo)
         logoimg.setBackgroundResource(R.drawable.logo_animation_list)
         logoanimation = logoimg.background as AnimationDrawable
 
         tweenanimation = AnimationUtils.loadAnimation(this,R.anim.tween_animation)
         tweenanimation.setAnimationListener(this)
+        logoimg.startAnimation(tweenanimation)
 
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         if(hasFocus)
         {
-           logoimg.startAnimation(tweenanimation)
+           logoanimation.start()
 
         }
         else
@@ -46,7 +47,7 @@ class SplashActivity : AppCompatActivity() ,AnimationListener{
 
     override fun onAnimationEnd(p0: Animation?) {
         //intent
-        Intent(this,MainActivity::class.java).also { startActivity(it) }
+        Intent(this,SplashActivity::class.java).also { startActivity(it) }
     }
 
     override fun onAnimationRepeat(p0: Animation?) {
